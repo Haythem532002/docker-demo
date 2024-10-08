@@ -1,8 +1,11 @@
 FROM openjdk:21-jdk
 
-COPY target/docker-demo-0.0.1-SNAPSHOT.jar /app/demo.jar
+WORKDIR /app
+
+COPY /target/docker-demo-0.0.1-SNAPSHOT.jar /app/docker-demo-0.0.1-SNAPSHOT.jar
 
 EXPOSE 1200
 
-CMD ["java -jar demo.jar"]
+CMD ["java", "-jar" ,"docker-demo-0.0.1-SNAPSHOT.jar"]
+
 
